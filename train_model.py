@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+from kaggle import KaggleApi
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
@@ -8,6 +9,25 @@ import pickle
 # Folder na dataset i zapis modelu
 DATASET_FOLDER = "datasets"
 DATA_FOLDER = "data"
+
+os.makedirs(DATASET_FOLDER, exist_ok=True)
+
+def download_dataset():
+    """
+    Pobieranie datasetu Global Terrorism Database z Kaggle.
+    """
+    api = KaggleApi()
+    api.authenticate()
+
+    dataset_name = "START-UMD/gtd"  # Nazwa datasetu na Kaggle
+    api.dataset_download_files(dataset_name, path=DATASET_FOLDER, unzip=True)
+    print(f"Dataset pobrany i zapisany w folderze {DATASET_FOLDER}")
+
+dataset_path = os.path.join(DATASET_FOLDER, "globalterrorismdb.csv")
+if not os.path.exists(dataset_path):
+    print("Dataset nieznaleziony. Pobieram z Kaggle...")
+    download_dataset()
+
 os.makedirs(DATASET_FOLDER, exist_ok=True)
 os.makedirs(DATA_FOLDER, exist_ok=True)
 
