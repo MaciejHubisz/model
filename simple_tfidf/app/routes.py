@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template, request
-import pandas as pd
-from app.models import predict_top3, predict_user_model, train_user_model
-from app.utils import load_user_data, save_user_data
+from simple_tfidf.app.models import predict_top3, predict_user_model, train_user_model
+from simple_tfidf.app.utils import load_user_data, save_user_data
 
 main = Blueprint('main', __name__)
 
