@@ -1,52 +1,83 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>GTD - Predykcja rodzaju ataku</title>
-</head>
 <body>
     <h1>Global Terrorism Database - Predykcja rodzaju ataku</h1>
     <form method="POST">
-        <label for="country">Kraj:</label>
-        <select name="country" id="country">
-            {% for country in countries %}
-                <option value="{{ country }}" {% if selected_country == country %}selected{% endif %}>
-                    {{ country }}
-                </option>
-            {% endfor %}
-        </select>
-        <br /><br />
+        <div class="form-row">
+            <label for="country">Kraj:</label>
+            <select name="country" id="country">
+                {% for country in countries %}
+                    <option value="{{ country }}" {% if selected_country == country %}selected{% endif %}>
+                        {{ country }}
+                    </option>
+                {% endfor %}
+            </select>
 
-        <label for="weapon">Typ broni:</label>
-        <select name="weapon" id="weapon">
-            {% for weapon in weapons %}
-                <option value="{{ weapon }}" {% if selected_weapon == weapon %}selected{% endif %}>
-                    {{ weapon }}
-                </option>
-            {% endfor %}
-        </select>
-        <br /><br />
+            <label for="weapon">Typ broni:</label>
+            <select name="weapon" id="weapon">
+                {% for weapon in weapons %}
+                    <option value="{{ weapon }}" {% if selected_weapon == weapon %}selected{% endif %}>
+                        {{ weapon }}
+                    </option>
+                {% endfor %}
+            </select>
 
-        <label for="decade">Dekada:</label>
-        <select name="decade" id="decade">
-            {% for decade in decades %}
-                <option value="{{ decade }}" {% if selected_decade == decade %}selected{% endif %}>
-                    {{ decade }}
-                </option>
-            {% endfor %}
-        </select>
-        <br /><br />
+            <label for="decade">Dekada:</label>
+            <select name="decade" id="decade">
+                {% for decade in decades %}
+                    <option value="{{ decade }}" {% if selected_decade == decade %}selected{% endif %}>
+                        {{ decade }}
+                    </option>
+                {% endfor %}
+            </select>
 
-        <button type="submit">Przewiduj</button>
+            <button type="submit" name="action" value="predict">Wylicz</button>
+        </div>
+
+        {% if predictions %}
+            <div class="results">
+                <h2>Top 3 przewidywane rodzaje ataków:</h2>
+                <ul>
+                    {% for label, prob in predictions %}
+                        <li>
+                            <input type="radio" name="selected_option" value="{{ label }}" id="option_{{ loop.index }}" />
+                            <label for="option_{{ loop.index }}">
+                                {{ label }} - {{ prob }}% (Historyczny)
+                                {% if user_predictions %}
+                                    <span>- {{ user_predictions[label] }}% (Użytkownik)</span>
+                                {% endif %}
+                            </label>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <button type="submit" name="action" value="save">Zapisz odpowiedź</button>
+            </div>
+        {% endif %}
+
+            <div class="train-message">
+                <strong>{{ train_message }}</strong>
+            </div>
     </form>
 
-    {% if predictions %}
-        <h2>Top 3 przewidywane rodzaje ataków:</h2>
-        <ul>
-            {% for label, prob in predictions %}
-                <li>{{ label }} - {{ prob }}%</li>
+    <hr />
+
+    <h2>Dane użytkownika:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Kraj</th>
+                <th>Typ broni</th>
+                <th>Dekada</th>
+                <th>Wybrana opcja</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in user_data %}
+                <tr>
+                    <td>{{ entry.country }}</td>
+                    <td>{{ entry.weapon }}</td>
+                    <td>{{ entry.decade }}</td>
+                    <td>{{ entry.selected_option }}</td>
+                </tr>
             {% endfor %}
-        </ul>
-    {% endif %}
+        </tbody>
+    </table>
 </body>
-</html>

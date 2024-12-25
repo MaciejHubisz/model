@@ -1,11 +1,13 @@
 import os
 import pickle
+import pandas as pd
 from flask import Flask, request, render_template
 
-# Ścieżka do folderu z plikami modelu i vectorizera
+# Ścieżki do folderów i plików
 DATA_FOLDER = "data"
 MODEL_PATH = os.path.join(DATA_FOLDER, "model.pkl")
 VECTORIZER_PATH = os.path.join(DATA_FOLDER, "vectorizer.pkl")
+USER_DATA_PATH = os.path.join(DATA_FOLDER, "user_data.csv")
 
 # Wczytaj model i vectorizer
 with open(MODEL_PATH, "rb") as f_model:
@@ -22,6 +24,10 @@ countries = ["Afghanistan", "Iraq", "Pakistan", "India", "Syria", "Somalia", "Ye
              "Colombia"]
 weapons = ["Explosives", "Firearms", "Incendiary", "Melee", "Vehicle", "Unknown"]
 decades = [str(decade) for decade in range(1970, 2020, 10)]  # Dekady od 1970 do 2010
+
+# Inicjalizacja pliku na dane użytkownika
+if not os.path.exists(USER_DATA_PATH):
+    pd.DataFrame(columns=["country", "weapon", "decade", "selected_option"]).to_csv(USER_DATA_PATH, index=False)
 
 
 def predict_top3(country, weapon, decade):
@@ -53,15 +59,29 @@ def index():
     selected_weapon = None
     selected_decade = None
     predictions = None
+    user_data = pd.read_csv(USER_DATA_PATH)  # Wczytaj dane użytkownika
 
     if request.method == "POST":
         # Pobierz dane z formularza
         selected_country = request.form.get("country")
         selected_weapon = request.form.get("weapon")
         selected_decade = request.form.get("decade")
+        selected_option = request.form.get("selected_option")
 
-        # Przewiduj top 3
-        predictions = predict_top3(selected_country, selected_weapon, selected_decade)
+        if selected_option:
+            # Zapisz wybór użytkownika
+            new_entry = pd.DataFrame([{
+                "country": selected_country,
+                "weapon": selected_weapon,
+                "decade": selected_decade,
+                "selected_option": selected_option
+            }])
+            user_data = pd.concat([user_data, new_entry], ignore_index=True)
+            user_data.to_csv(USER_DATA_PATH, index=False)
+
+        else:
+            # Wygeneruj predykcje
+            predictions = predict_top3(selected_country, selected_weapon, selected_decade)
 
     return render_template(
         "index.html",
@@ -71,7 +91,8 @@ def index():
         predictions=predictions,
         selected_country=selected_country,
         selected_weapon=selected_weapon,
-        selected_decade=selected_decade
+        selected_decade=selected_decade,
+        user_data=user_data.to_dict(orient="records")  # Przekaż dane użytkownika
     )
 
 
