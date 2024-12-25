@@ -1,4 +1,8 @@
+import numpy as np
+import pandas as pd
+
 from simple_tensor_flow.utils.data_split import split_dataset
+from simple_tensor_flow.utils.model_builder import build_model
 from simple_tensor_flow.utils.text_representation import represent_text
 from utils.kaggle_downloader import download_kaggle_dataset
 from utils.checks import check_installed_libraries
@@ -46,12 +50,28 @@ def main():
     # 6. Reprezentacja tekstu
     print("Step 6: Representing text as TF-IDF...")
     tfidf_dir = os.path.join(output_path, "tfidf")
-    represent_text(
-        os.path.join(split_dir, "train.csv"),
-        os.path.join(split_dir, "validation.csv"),
-        os.path.join(split_dir, "test.csv"),
-        tfidf_dir
-    )
+    # represent_text(
+    #     os.path.join(split_dir, "train.csv"),
+    #     os.path.join(split_dir, "validation.csv"),
+    #     os.path.join(split_dir, "test.csv"),
+    #     tfidf_dir
+    # )
+
+    # 7. Budowa modelu
+    print("Step 7: Building the neural network model...")
+    X_train = pd.read_csv(f"{tfidf_dir}/X_train.csv").values
+    y_train = pd.read_csv(f"{tfidf_dir}/y_train.csv").values.flatten()
+
+    input_dim = X_train.shape[1]
+    num_classes = len(np.unique(y_train))
+
+    model = build_model(input_dim, num_classes)
+    model.summary()
+
+    # Zapis modelu do pliku
+    model_path = os.path.join(output_path, "model.h5")
+    model.save(model_path)
+    print(f"Model saved to {model_path}")
 
 
 if __name__ == "__main__":
