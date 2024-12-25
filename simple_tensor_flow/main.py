@@ -1,4 +1,5 @@
 from simple_tensor_flow.utils.data_split import split_dataset
+from simple_tensor_flow.utils.text_representation import represent_text
 from utils.kaggle_downloader import download_kaggle_dataset
 from utils.checks import check_installed_libraries
 from utils.data_analysis import analyze_dataset
@@ -40,7 +41,18 @@ def main():
     # 5. Podziel dataset
     print("Step 5: Splitting dataset...")
     split_dir = os.path.join(output_path, "splits")
-    split_dataset(preprocessed_file, split_dir)
+    # split_dataset(preprocessed_file, split_dir)
+
+    # 6. Reprezentacja tekstu
+    print("Step 6: Representing text as TF-IDF...")
+    tfidf_dir = os.path.join(output_path, "tfidf")
+    represent_text(
+        os.path.join(split_dir, "train.csv"),
+        os.path.join(split_dir, "validation.csv"),
+        os.path.join(split_dir, "test.csv"),
+        tfidf_dir
+    )
+
 
 if __name__ == "__main__":
     main()

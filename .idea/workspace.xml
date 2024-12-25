@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b5ae0b2-5166-48ec-b427-152591f52ff5" name="Changes" comment="preprocessing" />
+    <list default="true" id="1b5ae0b2-5166-48ec-b427-152591f52ff5" name="Changes" comment="split">
+      <change afterPath="$PROJECT_DIR$/simple_tensor_flow/utils/text_representation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple_tensor_flow/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/simple_tensor_flow/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -288,7 +292,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735158157677</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="split">
+      <option name="closed" value="true" />
+      <created>1735158280516</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1735158280516</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -327,6 +339,7 @@
     <MESSAGE value="polish" />
     <MESSAGE value="empty file folder holder" />
     <MESSAGE value="preprocessing" />
-    <option name="LAST_COMMIT_MESSAGE" value="preprocessing" />
+    <MESSAGE value="split" />
+    <option name="LAST_COMMIT_MESSAGE" value="split" />
   </component>
 </project>
