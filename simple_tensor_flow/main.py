@@ -1,3 +1,4 @@
+from simple_tensor_flow.utils.data_split import split_dataset
 from utils.kaggle_downloader import download_kaggle_dataset
 from utils.checks import check_installed_libraries
 from utils.data_analysis import analyze_dataset
@@ -30,12 +31,16 @@ def main():
 
     # 4. Przetwarzaj dataset
     preprocessed_file = os.path.join(output_path, "book_data_preprocessed.csv")
-    if not os.path.exists(preprocessed_file):
-        print("Step 4: Preprocessing dataset...")
-        preprocess_dataset(dataset_file, preprocessed_file)
-    else:
-        print("Step 4: Preprocessed dataset already exists. Skipping preprocessing.")
+    # if not os.path.exists(preprocessed_file):
+    #     print("Step 4: Preprocessing dataset...")
+    #     preprocess_dataset(dataset_file, preprocessed_file)
+    # else:
+    #     print("Step 4: Preprocessed dataset already exists. Skipping preprocessing.")
 
+    # 5. Podziel dataset
+    print("Step 5: Splitting dataset...")
+    split_dir = os.path.join(output_path, "splits")
+    split_dataset(preprocessed_file, split_dir)
 
 if __name__ == "__main__":
     main()

@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b5ae0b2-5166-48ec-b427-152591f52ff5" name="Changes" comment="empty file folder holder">
-      <change afterPath="$PROJECT_DIR$/simple_tensor_flow/utils/preprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple_tensor_flow/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/simple_tensor_flow/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="1b5ae0b2-5166-48ec-b427-152591f52ff5" name="Changes" comment="preprocessing" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -284,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735157811497</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="preprocessing">
+      <option name="closed" value="true" />
+      <created>1735158157677</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1735158157677</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -322,6 +326,7 @@
     <MESSAGE value="tensor download and read dataset" />
     <MESSAGE value="polish" />
     <MESSAGE value="empty file folder holder" />
-    <option name="LAST_COMMIT_MESSAGE" value="empty file folder holder" />
+    <MESSAGE value="preprocessing" />
+    <option name="LAST_COMMIT_MESSAGE" value="preprocessing" />
   </component>
 </project>
