@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b5ae0b2-5166-48ec-b427-152591f52ff5" name="Changes" comment="new folder">
-      <change afterPath="$PROJECT_DIR$/simple_tensor_flow/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simple_tensor_flow/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simple_tensor_flow/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simple_tensor_flow/utils/checks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simple_tensor_flow/utils/data_analysis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simple_tensor_flow/utils/kaggle_downloader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/basic_model.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/basic_model.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1b5ae0b2-5166-48ec-b427-152591f52ff5" name="Changes" comment="empty file folder holder">
+      <change afterPath="$PROJECT_DIR$/simple_tensor_flow/utils/preprocessing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple_tensor_flow/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/simple_tensor_flow/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +260,31 @@
       <option name="project" value="LOCAL" />
       <updated>1735151126301</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="tensor download and read dataset">
+      <option name="closed" value="true" />
+      <created>1735155412666</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1735155412666</updated>
+    </task>
+    <task id="LOCAL-00011" summary="polish">
+      <option name="closed" value="true" />
+      <created>1735155465235</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1735155465235</updated>
+    </task>
+    <task id="LOCAL-00012" summary="empty file folder holder">
+      <option name="closed" value="true" />
+      <created>1735157811497</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1735157811497</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,6 +319,9 @@
     <MESSAGE value="push rules and protected" />
     <MESSAGE value="next improvements" />
     <MESSAGE value="new folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="new folder" />
+    <MESSAGE value="tensor download and read dataset" />
+    <MESSAGE value="polish" />
+    <MESSAGE value="empty file folder holder" />
+    <option name="LAST_COMMIT_MESSAGE" value="empty file folder holder" />
   </component>
 </project>
