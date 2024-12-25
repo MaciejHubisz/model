@@ -18,7 +18,7 @@ def check_installed_libraries():
 
         # Test NLTK and spaCy
         nltk.download('stopwords', quiet=True)
-        spacy.load("en_core_web_sm")
+        spacy.load("pl_core_news_sm")
 
         print("✅ All libraries are successfully loaded.")
     except ImportError as e:
