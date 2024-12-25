@@ -1,2 +1,3 @@
 simple_tfidf/data/*
 simple_tfidf/datasets/*
+simple_tensor_flow/datasets/*
