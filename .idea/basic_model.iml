@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/userdata" />
+      <excludeFolder url="file://$MODULE_DIR$/simple_tensor_flow/datasets" />
       <excludeFolder url="file://$MODULE_DIR$/simple_tfidf/data" />
       <excludeFolder url="file://$MODULE_DIR$/simple_tfidf/datasets" />
     </content>
