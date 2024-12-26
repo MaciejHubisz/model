@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b5ae0b2-5166-48ec-b427-152591f52ff5" name="Changes" comment="processed data">
-      <change afterPath="$PROJECT_DIR$/simple_tensor_flow/utils/model_builder.py" afterDir="false" />
+    <list default="true" id="1b5ae0b2-5166-48ec-b427-152591f52ff5" name="Changes" comment="excluded">
+      <change afterPath="$PROJECT_DIR$/simple_tensor_flow/utils/model_training.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple_tensor_flow/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/simple_tensor_flow/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple_tensor_flow/utils/text_representation.py" beforeDir="false" afterPath="$PROJECT_DIR$/simple_tensor_flow/utils/text_representation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +309,23 @@
       <option name="project" value="LOCAL" />
       <updated>1735159623609</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="model builder">
+      <option name="closed" value="true" />
+      <created>1735159750049</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1735159750049</updated>
+    </task>
+    <task id="LOCAL-00017" summary="excluded">
+      <option name="closed" value="true" />
+      <created>1735159794849</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1735159794849</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -347,6 +366,8 @@
     <MESSAGE value="preprocessing" />
     <MESSAGE value="split" />
     <MESSAGE value="processed data" />
-    <option name="LAST_COMMIT_MESSAGE" value="processed data" />
+    <MESSAGE value="model builder" />
+    <MESSAGE value="excluded" />
+    <option name="LAST_COMMIT_MESSAGE" value="excluded" />
   </component>
 </project>
